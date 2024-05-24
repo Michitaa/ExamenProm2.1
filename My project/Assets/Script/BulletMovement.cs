@@ -22,5 +22,6 @@ public class BulletMovement : MonoBehaviour
     void Update()
     {
         rb.velocity = direction * speed;
+        Destroy(gameObject,2f);
     }
 }
