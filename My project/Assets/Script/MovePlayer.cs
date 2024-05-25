@@ -14,4 +14,12 @@ public class MovePlayer : Movement
         Vector3 direction = new Vector3(transform.forward.x * vertical, 0, transform.forward.z * vertical);
         rb.velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        { 
+            Destroy(other.gameObject);
+        }
+    }
 }
